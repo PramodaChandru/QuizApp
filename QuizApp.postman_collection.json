@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "0589cdab-c389-41c0-b1da-687482154a61",
+		"name": "QuizApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4251274"
+	},
+	"item": [
+		{
+			"name": "question",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/question/allQuestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"question",
+								"allQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/question/category/Java",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"question",
+								"category",
+								"Java"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question\": \"Q4\",\n    \"category\": \"Java\",\n    \"difficultyLevel\": \"Easy\",\n    \"option1\": \"op1\",\n    \"option2\": \"op2\",\n    \"option3\": \"op3\",\n    \"option4\": \"op4\",\n    \"correctAnswer\": \"op1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/question/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"question",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "quiz",
+			"item": [
+				{
+					"name": "createQuiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numQ\": 2,\n    \"title\": \"JavaQuiz\",\n    \"category\": \"Java\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/quiz/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"quiz",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"id\": 3,\n        \"userAnswer\": \"op1\"\n    },\n    {\n        \"id\": 4,\n        \"userAnswer\": \"op2\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/quiz/submit/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"quiz",
+								"submit",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/quiz/getQuiz/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"quiz",
+								"getQuiz",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mircoservices",
+			"item": [
+				{
+					"name": "getAll Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/question/allQuestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"question",
+								"allQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question\": \"Q1\",\n    \"category\": \"Java\",\n    \"difficultyLevel\": \"Easy\",\n    \"option1\": \"op1\",\n    \"option2\": \"op2\",\n    \"option3\": \"op3\",\n    \"option4\": \"op4\",\n    \"correctAnswer\": \"op1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/question/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createQuiz Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numQ\": 1,\n    \"title\": \"JavaQuiz\",\n    \"category\": \"Java\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/QUIZ-SERVICE/quiz/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"QUIZ-SERVICE",
+								"quiz",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
